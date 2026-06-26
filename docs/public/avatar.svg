@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="kllin AI Lab 视觉标识">
+  <rect width="320" height="320" rx="34" fill="#f7f2e8"/>
+  <path d="M36 52h248v216H36V52Z" fill="#17211d"/>
+  <path d="M60 76h200v38H60V76Z" fill="#f7f2e8"/>
+  <path d="M84 148h34v86H84v-86Zm55 0h34v86h-34v-86Zm55 0h34v86h-34v-86Z" fill="#2f5d50"/>
+  <path d="M70 92h42" stroke="#2f5d50" stroke-width="8" stroke-linecap="round"/>
+  <path d="M230 90h14v14h-14V90Zm-24 0h14v14h-14V90Zm-24 0h14v14h-14V90Z" fill="#9a573f"/>
+  <path d="M82 144h148" stroke="#f7f2e8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M84 236h144" stroke="#d59a43" stroke-width="12" stroke-linecap="round"/>
+  <path d="M54 286h212" stroke="#2f5d50" stroke-width="10" stroke-linecap="round"/>
+  <text x="160" y="134" fill="#f7f2e8" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" text-anchor="middle">AI Lab</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="kllin AI Lab 标识">
+  <rect width="64" height="64" rx="12" fill="#17211d"/>
+  <path d="M15 17h8v13l12-13h10L31 32l15 15H35L23 34v13h-8V17Z" fill="#f7f2e8"/>
+  <path d="M45 17h5v30h-5V17Z" fill="#d59a43"/>
+  <path d="M47 42h8v5h-8v-5Z" fill="#d59a43"/>
+  <path d="M14 52h38" stroke="#2f5d50" stroke-width="4" stroke-linecap="round"/>
+</svg>
