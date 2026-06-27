@@ -152,7 +152,7 @@ const articles: Article[] = [
 
 const signals = [
   { label: 'Focus', value: 'RAG 质量 · Agent 可观测性' },
-  { label: 'Stack', value: 'Java · Spring Boot · TypeScript · React · Vue' },
+  { label: 'Stack', value: 'Java · Python · Spring Boot · TypeScript · React · Vue' },
   { label: 'Output', value: 'AI DevOps · Vibe Coding · 多 AI 接力' }
 ]
 
