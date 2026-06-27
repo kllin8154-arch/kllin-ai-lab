@@ -9,6 +9,7 @@
     "docs:preview": "vitepress preview docs --host 127.0.0.1"
   },
   "devDependencies": {
+    "@lobehub/icons-static-svg": "^1.91.0",
     "vitepress": "1.6.4"
   },
   "overrides": {

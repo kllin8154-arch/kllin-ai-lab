@@ -1689,7 +1689,7 @@
 .lab-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
-  gap: 34px 54px;
+  gap: 28px 54px;
   align-items: end;
 }
 
@@ -1698,12 +1698,13 @@
 }
 
 .lab-hero-copy h1 {
-  grid-column: 1 / -1;
-  max-width: 940px;
+  grid-column: 1;
+  grid-row: 1;
+  max-width: 760px;
   margin: 0;
   color: var(--lab-ink);
   font-family: var(--lab-serif);
-  font-size: 104px;
+  font-size: 92px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 0.98;
@@ -1768,6 +1769,165 @@
   background: var(--accent-sage);
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+.lab-brand-field {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  display: grid;
+  gap: 18px;
+  min-height: 318px;
+  padding: 18px 0 22px;
+  border-top: 1px solid var(--lab-line);
+  border-bottom: 1px solid var(--lab-line);
+}
+
+.brand-field-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--lab-muted);
+  font-family: var(--lab-mono);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.brand-field-head span {
+  color: var(--accent-sage);
+  text-transform: uppercase;
+}
+
+.brand-field-head strong {
+  color: var(--lab-muted);
+  font-weight: 800;
+}
+
+.brand-orbit {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(5, 42px);
+  gap: 10px;
+  min-height: 230px;
+}
+
+.brand-mark {
+  --brand-color: var(--accent-sage);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  max-width: 100%;
+  min-height: 38px;
+  border: 1px solid color-mix(in srgb, var(--brand-color) 26%, var(--lab-line));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--lab-panel) 68%, transparent);
+  padding: 6px 9px 6px 6px;
+  color: var(--lab-ink);
+  box-shadow: 0 14px 34px rgba(26, 31, 28, 0.05);
+}
+
+.brand-mark i {
+  display: grid;
+  min-width: 28px;
+  height: 28px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--brand-color) 18%, var(--lab-line));
+  border-radius: 7px;
+  background: #ffffff;
+  font-style: normal;
+}
+
+.brand-mark i img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.brand-mark span {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.brand-mark strong {
+  color: var(--lab-ink);
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-mark small {
+  color: var(--lab-muted);
+  font-family: var(--lab-mono);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-mark.is-sage {
+  --brand-color: var(--accent-sage);
+}
+
+.brand-mark.is-clay {
+  --brand-color: var(--accent-clay);
+}
+
+.brand-mark.is-blue {
+  --brand-color: var(--accent-blue);
+}
+
+.brand-mark.is-ink {
+  --brand-color: #1a1f1c;
+}
+
+.brand-mark.is-amber {
+  --brand-color: var(--accent-amber);
+}
+
+.brand-mark.is-indigo {
+  --brand-color: #4268fa;
+}
+
+.brand-mark:nth-of-type(1) {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.brand-mark:nth-of-type(2) {
+  grid-column: 4 / span 3;
+  grid-row: 1;
+}
+
+.brand-mark:nth-of-type(3) {
+  grid-column: 1 / span 3;
+  grid-row: 2;
+}
+
+.brand-mark:nth-of-type(4) {
+  grid-column: 4 / span 3;
+  grid-row: 2;
+}
+
+.brand-mark:nth-of-type(5) {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
+.brand-mark:nth-of-type(6) {
+  grid-column: 4 / span 3;
+  grid-row: 3;
+}
+
+.brand-mark:nth-of-type(7) {
+  grid-column: 2 / span 3;
+  grid-row: 4;
 }
 
 .lab-signal-panel {
@@ -2379,6 +2539,7 @@
   .lab-hero-copy h1,
   .lab-hero-copy p,
   .lab-hero-actions,
+  .lab-brand-field,
   .lab-signal-panel {
     grid-column: auto;
     grid-row: auto;
@@ -2390,6 +2551,36 @@
 
   .lab-signal-panel {
     max-width: 620px;
+  }
+
+  .lab-brand-field {
+    max-width: 620px;
+    min-height: auto;
+  }
+
+  .brand-orbit {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-height: auto;
+  }
+
+  .brand-mark,
+  .brand-mark.is-sage,
+  .brand-mark.is-clay,
+  .brand-mark.is-blue,
+  .brand-mark.is-ink,
+  .brand-mark.is-amber,
+  .brand-mark.is-indigo,
+  .brand-mark:nth-of-type(1),
+  .brand-mark:nth-of-type(2),
+  .brand-mark:nth-of-type(3),
+  .brand-mark:nth-of-type(4),
+  .brand-mark:nth-of-type(5),
+  .brand-mark:nth-of-type(6),
+  .brand-mark:nth-of-type(7) {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .work-preview {
@@ -2464,6 +2655,47 @@
 
   .lab-hero-actions {
     display: grid;
+  }
+
+  .lab-brand-field {
+    gap: 14px;
+    padding: 14px 0 18px;
+  }
+
+  .brand-field-head {
+    display: grid;
+    justify-content: start;
+    gap: 4px;
+  }
+
+  .brand-orbit {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 100%;
+    min-width: 0;
+    min-height: 36px;
+    padding-right: 8px;
+  }
+
+  .brand-mark:nth-of-type(7) {
+    grid-column: 1 / -1;
+  }
+
+  .brand-mark i {
+    min-width: 26px;
+    height: 26px;
+  }
+
+  .brand-mark strong {
+    font-size: 12px;
+  }
+
+  .brand-mark small {
+    font-size: 9px;
   }
 
   .lab-signal {

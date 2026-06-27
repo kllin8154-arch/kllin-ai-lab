@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import anthropicIcon from '@lobehub/icons-static-svg/icons/anthropic.svg?url'
+import chatglmIcon from '@lobehub/icons-static-svg/icons/chatglm-color.svg?url'
+import claudeIcon from '@lobehub/icons-static-svg/icons/claude-color.svg?url'
+import claudeCodeIcon from '@lobehub/icons-static-svg/icons/claudecode-color.svg?url'
+import codexIcon from '@lobehub/icons-static-svg/icons/codex-color.svg?url'
+import deepSeekIcon from '@lobehub/icons-static-svg/icons/deepseek-color.svg?url'
+import openAiIcon from '@lobehub/icons-static-svg/icons/openai.svg?url'
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { withBase } from 'vitepress'
 
@@ -32,6 +39,13 @@ type Article = {
   title: string
   description: string
   source: string
+}
+
+type BrandMark = {
+  label: string
+  icon: string
+  meta: string
+  tone: string
 }
 
 const projects: Project[] = [
@@ -124,7 +138,7 @@ const articles: Article[] = [
     category: 'NoemaTrace',
     title: '让 Agent 执行可回放',
     description: 'Agent 可观测性不只是一张仪表盘，而是从单次执行回放、失败分析和上下文预算开始。',
-    source: '站内草稿'
+    source: '站内文章'
   },
   {
     href: '/articles/projvault-rag-quality',
@@ -138,8 +152,18 @@ const articles: Article[] = [
 
 const signals = [
   { label: 'Focus', value: 'RAG 质量 · Agent 可观测性' },
-  { label: 'Stack', value: 'Java · Spring Boot · React · Vue' },
+  { label: 'Stack', value: 'Java · Spring Boot · TypeScript · React · Vue' },
   { label: 'Output', value: 'AI DevOps · Vibe Coding · 多 AI 接力' }
+]
+
+const brandMarks: BrandMark[] = [
+  { label: 'OpenAI (ChatGPT)', icon: openAiIcon, meta: 'Product', tone: 'ink' },
+  { label: 'Anthropic', icon: anthropicIcon, meta: 'Company', tone: 'sage' },
+  { label: 'Claude', icon: claudeIcon, meta: 'Model', tone: 'clay' },
+  { label: 'Claude Code', icon: claudeCodeIcon, meta: 'Agent IDE', tone: 'clay' },
+  { label: 'Codex', icon: codexIcon, meta: 'Coding Agent', tone: 'blue' },
+  { label: 'DeepSeek', icon: deepSeekIcon, meta: 'Model', tone: 'blue' },
+  { label: 'ChatGLM', icon: chatglmIcon, meta: 'Zhipu AI', tone: 'indigo' }
 ]
 
 const methods = [
@@ -289,6 +313,27 @@ onBeforeUnmount(() => {
           <div class="lab-hero-actions" aria-label="首页快捷入口">
             <a href="#projects">向下浏览精选项目</a>
             <a :href="withBase('/methodology')">查看工程方法</a>
+          </div>
+        </div>
+
+        <div class="lab-brand-field" aria-label="AI 工具与模型生态">
+          <div class="brand-field-head">
+            <span>AI Stack</span>
+            <strong>Model & Agent Tools</strong>
+          </div>
+          <div class="brand-orbit">
+            <span
+              v-for="brand in brandMarks"
+              :key="brand.label"
+              class="brand-mark"
+              :class="`is-${brand.tone}`"
+            >
+              <i><img :src="brand.icon" :alt="`${brand.label} 官方图标`" loading="lazy" /></i>
+              <span>
+                <strong>{{ brand.label }}</strong>
+                <small>{{ brand.meta }}</small>
+              </span>
+            </span>
           </div>
         </div>
 
